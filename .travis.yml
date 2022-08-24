@@ -1,0 +1,9 @@
+language: node_js
+services:
+ - docker
+
+ before install:
+  -docker build -t hahaong/reactapp -f Dockerfile.dev .
+
+scrips:
+ - docker run hahaong/reactapp npm run test -- --coverage
